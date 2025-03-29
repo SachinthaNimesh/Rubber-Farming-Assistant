@@ -1,0 +1,40 @@
+.container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.tool-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tool-item {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.tool-item:hover {
+  transform: scale(1.02);
+}
+
+.tool-title {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.tool-description {
+  font-size: 1rem;
+  color: #666;
+}

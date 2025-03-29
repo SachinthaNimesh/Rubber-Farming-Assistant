@@ -1,0 +1,33 @@
+.container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.question {
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 15px 0 5px;
+}
+
+.answer {
+  margin-left: 20px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.faq-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
