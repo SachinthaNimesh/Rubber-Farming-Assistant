@@ -4,7 +4,6 @@ import Header from "./Header"; // Import the Header component
 import {
   Card,
   CardContent,
-  CardMedia,
   Typography,
   Paper,
   useMediaQuery,
@@ -67,31 +66,43 @@ function Home() {
                   path: "/tips",
                   title: "Farming Tips",
                   description: "Essential information for rubber cultivation",
+                  color: "#FFCDD2", // Light red
+                  emoji: "🌱", // Added emoji
                 },
                 {
                   path: "/challenges",
                   title: "Climate & Soil",
                   description: "Understanding challenges and solutions",
+                  color: "#C8E6C9", // Light green
+                  emoji: "🌍", // Added emoji
                 },
                 {
                   path: "/solutions",
                   title: "Solutions",
                   description: "Practical advice for common problems",
+                  color: "#BBDEFB", // Light blue
+                  emoji: "💡", // Added emoji
                 },
                 {
                   path: "/tools",
                   title: "Tools",
                   description: "Calculators and weather updates",
+                  color: "#FFF9C4", // Light yellow
+                  emoji: "🛠️", // Added emoji
                 },
                 {
                   path: "/faqs",
                   title: "FAQs",
                   description: "Answers to common farming questions",
+                  color: "#D1C4E9", // Light purple
+                  emoji: "❓", // Added emoji
                 },
                 {
                   path: "/support",
                   title: "Contact Us",
                   description: "Ask questions or provide feedback",
+                  color: "#FFECB3", // Light orange
+                  emoji: "📞", // Added emoji
                 },
               ].map((item, index) => (
                 <Box
@@ -117,20 +128,28 @@ function Home() {
                         height: "100%",
                         display: "flex",
                         flexDirection: "column",
+                        backgroundColor: item.color, // Apply the color dynamically
                       }}
                     >
-                      <CardMedia
-                        sx={{ height: 140 }}
-                        image="src/assets/rubber leaf.png"
-                        title={item.title}
-                      />
-                      <CardContent sx={{ flexGrow: 1 }}>
+                      <CardContent
+                        sx={{
+                          flexGrow: 1,
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          padding: 2,
+                        }}
+                      >
+                        <Typography variant="h2" component="div">
+                          {item.emoji} {/* Display emoji */}
+                        </Typography>
                         <Typography gutterBottom variant="h5" component="div">
                           {item.title}
                         </Typography>
                         <Typography
                           variant="body2"
-                          sx={{ color: "text.secondary" }}
+                          sx={{ color: "text.secondary", textAlign: "center" }}
                         >
                           {item.description}
                         </Typography>
