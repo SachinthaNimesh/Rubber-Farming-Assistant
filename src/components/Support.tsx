@@ -1,25 +1,29 @@
 import Header from "./Header";
-import {
-  TextField,
-  Button,
-  Box,
-  Typography,
-  Snackbar,
-  Alert,
-} from "@mui/material";
+import { TextField, Button, Box, Snackbar, Alert } from "@mui/material";
 import { useState } from "react";
 
 function Support() {
   const [success, setSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    contactNumber: "",
+    message: "",
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Simulate form submission logic
     setSuccess(true);
+    setFormData({ name: "", contactNumber: "", message: "" }); // Clear form fields
   };
 
   const handleClose = () => {
     setSuccess(false);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   return (
@@ -53,12 +57,21 @@ function Support() {
           sx={{ display: "flex", flexDirection: "column", gap: 2 }}
           onSubmit={handleSubmit}
         >
-          <TextField label="Name" name="name" variant="outlined" fullWidth />
+          <TextField
+            label="Name"
+            name="name"
+            variant="outlined"
+            fullWidth
+            value={formData.name}
+            onChange={handleChange}
+          />
           <TextField
             label="Contact Number"
             name="contactNumber"
             variant="outlined"
             fullWidth
+            value={formData.contactNumber}
+            onChange={handleChange}
           />
           <TextField
             label="Message"
@@ -67,6 +80,8 @@ function Support() {
             multiline
             rows={4}
             fullWidth
+            value={formData.message}
+            onChange={handleChange}
           />
           <Button type="submit" variant="contained" color="primary">
             Submit

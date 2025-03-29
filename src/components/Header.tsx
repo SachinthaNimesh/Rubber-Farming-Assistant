@@ -40,7 +40,7 @@ function Header() {
         <Toolbar
           disableGutters
           sx={{
-            minHeight: { xs: 48, sm: 56, md: 64 }, // Reduced height for different screen sizes
+            minHeight: { xs: 48, sm: 56, md: 64 }, // Reduced height for the largest screen size
           }}
         >
           <Typography
@@ -54,7 +54,8 @@ function Header() {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
-              fontSize: { xs: "0.85rem", sm: "1rem", md: "1.5rem" }, // Adjusted font sizes for smaller screens
+              fontFamily: "arial",
+              fontSize: { xs: "0.85rem", sm: "1rem", md: "1.5rem" },
             }}
           >
             🌳 Rubber Farmer Assistant
@@ -95,7 +96,10 @@ function Header() {
             >
               {pages.map((page) => (
                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
+                  <Typography
+                    textAlign="center"
+                    sx={{ fontSize: "1rem" }} // Increased font size for menu items
+                  >
                     <Link
                       to={page.path}
                       style={{ textDecoration: "none", color: "inherit" }}
@@ -114,7 +118,13 @@ function Header() {
               <Button
                 key={page.name}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  fontSize: "1rem", // Increased font size
+                  marginRight: "20px", // Added spacing between items
+                }}
               >
                 <Link
                   to={page.path}

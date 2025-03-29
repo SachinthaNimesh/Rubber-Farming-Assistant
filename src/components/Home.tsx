@@ -18,8 +18,17 @@ function Home() {
     <div>
       <Header />
 
-      <Paper elevation={3} sx={{ backgroundColor: "white", padding: 2 }}>
-        <div className="main-content" style={{ marginTop: "80px" }}>
+      <Paper elevation={3} sx={{ backgroundColor: "white" }}>
+        <div
+          className="main-content"
+          style={{
+            marginTop: "80px",
+            backgroundImage: "url('src/assets/bg-img.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <section id="home">
             <Paper
               elevation={4}
@@ -29,6 +38,7 @@ function Home() {
                 padding: isMobile ? "10px" : "20px",
                 textAlign: "center",
                 marginBottom: "30px",
+                marginTop: isMobile ? "20px" : "40px",
               }}
             >
               <Typography
@@ -37,6 +47,9 @@ function Home() {
                 gutterBottom
               >
                 Welcome to Rubber Farmer Assistant
+              </Typography>
+              <Typography variant="h6" component="p">
+                Your digital companion for successful rubber cultivation
               </Typography>
             </Paper>
 
