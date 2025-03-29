@@ -23,11 +23,6 @@ function App() {
             <Route path="/support" element={<Support />} />
           </Routes>
         </main>
-
-        {/* Footer Section */}
-        <footer>
-          <p>&copy; 2025 Rubber Farming Assistant. All rights reserved.</p>
-        </footer>
       </div>
     </Router>
   );

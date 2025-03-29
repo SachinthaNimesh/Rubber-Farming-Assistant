@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Accordion,
   AccordionSummary,
@@ -6,29 +5,14 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Header from "./Header";
 
 function Solutions() {
-  return (
-    <div className="solutions">
-      <h2>Smart Farming Solutions for Kegalle’s Rubber Plantations</h2>
-      <p>
-        Farmers of Kegalle, you now know the challenges—heavy rains, soil
-        erosion, unpredictable droughts. But you CAN protect your rubber
-        plantation with the right techniques! Here’s how you can fight back and
-        boost your latex yield!
-      </p>
-
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1-content"
-          id="panel1-header"
-        >
-          <Typography component="span">
-            1️⃣ Water Management: Stop Floods & Survive Droughts!
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
+  const accordionData = [
+    {
+      title: "1️⃣ Water Management: Stop Floods & Survive Droughts!",
+      details: (
+        <>
           <p>
             Kegalle’s heavy monsoons (May–July, Sept–Nov) flood the land, while
             the dry season (Jan–March) leaves the soil cracked.
@@ -66,20 +50,13 @@ function Solutions() {
               Reduces heat stress and earns extra income!
             </li>
           </ul>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-          <Typography component="span">
-            2️⃣ Soil Conservation: Keep Your Land Healthy!
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
+        </>
+      ),
+    },
+    {
+      title: "2️⃣ Soil Conservation: Keep Your Land Healthy!",
+      details: (
+        <>
           <p>
             Without good soil, your rubber trees can’t survive. Protect your
             hilly lands from erosion & nutrient loss!
@@ -114,20 +91,13 @@ function Solutions() {
               to organic boosters!
             </li>
           </ul>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3-content"
-          id="panel3-header"
-        >
-          <Typography component="span">
-            3️⃣ Fertilization: Feed Your Trees, Get More Latex!
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
+        </>
+      ),
+    },
+    {
+      title: "3️⃣ Fertilization: Feed Your Trees, Get More Latex!",
+      details: (
+        <>
           <p>
             Rubber trees absorb nutrients every time they are tapped! Replace
             them to keep yields high.
@@ -175,8 +145,42 @@ function Solutions() {
             Swipe to the Next Section for Smart Farming Tools, Fertilizer
             Calculators & Weather Updates!
           </p>
-        </AccordionDetails>
-      </Accordion>
+        </>
+      ),
+    },
+  ];
+
+  return (
+    <div className="solutions">
+      <Header />
+      <div
+        style={{
+          position: "absolute",
+          top: "120px",
+          left: "20px",
+          right: "20px",
+        }}
+      >
+        <h2>Smart Farming Solutions for Kegalle’s Rubber Plantations</h2>
+        <p>
+          Farmers of Kegalle, you now know the challenges—heavy rains, soil
+          erosion, unpredictable droughts. But you CAN protect your rubber
+          plantation with the right techniques! Here’s how you can fight back
+          and boost your latex yield!
+        </p>
+        {accordionData.map((item, index) => (
+          <Accordion key={index}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={`panel${index + 1}-content`}
+              id={`panel${index + 1}-header`}
+            >
+              <Typography component="span">{item.title}</Typography>
+            </AccordionSummary>
+            <AccordionDetails>{item.details}</AccordionDetails>
+          </Accordion>
+        ))}
+      </div>
     </div>
   );
 }

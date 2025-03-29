@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
@@ -8,7 +8,8 @@ body {
 }
 
 .app {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1280px; 
   margin: 0 auto;
   padding: 20px;
 }
@@ -49,7 +50,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Button Styles */
 button {
   background-color: #4CAF50;
   color: white;
@@ -65,7 +65,7 @@ button:hover {
   background-color: #45a049;
 }
 
-/* Card Component */
+//Card Component 
 .card {
   background: white;
   border: 1px solid #ddd;
@@ -85,7 +85,7 @@ button:hover {
   color: #555;
 }
 
-/* Form Styles */
+
 form {
   background: white;
   padding: 20px;
@@ -114,14 +114,13 @@ form input:focus, form textarea:focus, form select:focus {
   outline: none;
 }
 
-/* Grid Layout */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
-/* Utility Classes */
 .text-center {
   text-align: center;
 }
@@ -132,4 +131,14 @@ form input:focus, form textarea:focus, form select:focus {
 
 .mb-20 {
   margin-bottom: 20px;
+}
+*/
+
+.background-image {
+  background-image: url('./assets/bg-img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
 }
