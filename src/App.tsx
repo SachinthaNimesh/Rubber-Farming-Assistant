@@ -11,7 +11,7 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <div className="app">
+      <div className="app background-image">
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

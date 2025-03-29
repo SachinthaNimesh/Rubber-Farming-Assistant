@@ -21,7 +21,9 @@ function Support() {
     setSuccess(false);
   };
 
-  const handleChange = (event: { target: { name: any; value: any } }) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
