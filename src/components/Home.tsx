@@ -7,8 +7,8 @@ import {
   CardMedia,
   Typography,
   Paper,
-  Grid,
   useMediaQuery,
+  Box,
 } from "@mui/material";
 
 function Home() {
@@ -53,7 +53,15 @@ function Home() {
               </Typography>
             </Paper>
 
-            <Grid container spacing={3} justifyContent="center">
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                gap: 3,
+                padding: 3,
+              }}
+            >
               {[
                 {
                   path: "/tips",
@@ -86,15 +94,37 @@ function Home() {
                   description: "Ask questions or provide feedback",
                 },
               ].map((item, index) => (
-                <Grid item xs={12} sm={6} md={4} key={index}>
-                  <Link to={item.path} style={{ textDecoration: "none" }}>
-                    <Card sx={{ maxWidth: 345, height: "100%" }}>
+                <Box
+                  key={index}
+                  sx={{
+                    width: {
+                      xs: "100%",
+                      sm: "calc(50% - 24px)",
+                      md: "calc(33.3333% - 24px)",
+                    },
+                  }}
+                >
+                  <Link
+                    to={item.path}
+                    style={{
+                      textDecoration: "none",
+                      width: "100%",
+                      display: "block",
+                    }}
+                  >
+                    <Card
+                      sx={{
+                        height: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
+                    >
                       <CardMedia
                         sx={{ height: 140 }}
                         image="src/assets/rubber leaf.png"
                         title={item.title}
                       />
-                      <CardContent>
+                      <CardContent sx={{ flexGrow: 1 }}>
                         <Typography gutterBottom variant="h5" component="div">
                           {item.title}
                         </Typography>
@@ -107,9 +137,9 @@ function Home() {
                       </CardContent>
                     </Card>
                   </Link>
-                </Grid>
+                </Box>
               ))}
-            </Grid>
+            </Box>
           </section>
         </div>
       </Paper>

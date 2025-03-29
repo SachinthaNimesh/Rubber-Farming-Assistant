@@ -1,5 +1,5 @@
 {
-  "homepage": "https://rubber-farming-assistant.github.io/rubber-farming-assistant",
+  "homepage": "https://rubber-farmer-assistant.netlify.app/",
   "name": "rubber-farming-assistant",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -21,11 +21,12 @@
     "@mui/styled-engine-sc": "^7.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "styled-components": "^6.1.16"
+    "styled-components": "^6.1.16",
+    "react-router-dom": "^6.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
-    "@types/react": "^19.0.10",
+    "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.21.0",

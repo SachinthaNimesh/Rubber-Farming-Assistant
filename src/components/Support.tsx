@@ -10,7 +10,7 @@ function Support() {
     message: "",
   });
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     // Simulate form submission logic
     setSuccess(true);
@@ -21,7 +21,7 @@ function Support() {
     setSuccess(false);
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: { target: { name: any; value: any } }) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
