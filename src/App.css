@@ -134,11 +134,3 @@ form input:focus, form textarea:focus, form select:focus {
 }
 */
 
-.background-image {
-  background-image: url('./assets/bg-img.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100%;
-}
