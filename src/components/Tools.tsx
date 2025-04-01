@@ -8,6 +8,7 @@ function Tools() {
   const [rainfall, setRainfall] = useState("");
   const [temperature, setTemperature] = useState("");
   const [farmHealthScore, setFarmHealthScore] = useState(0);
+  const [suggestion, setSuggestion] = useState("");
 
   const calculateFarmHealthScore = () => {
     let score = 0;
@@ -25,12 +26,30 @@ function Tools() {
     else if (drainageCondition === "Poor Drainage") score += 5;
 
     // Rainfall Scoring
-    if (rainfall === "Optimal (2000-2500)") score += 20;
+    if (rainfall === "Very Low (< 1500)") score += 5;
+    else if (rainfall === "Low (1500-2000)") score += 10;
+    else if (rainfall === "Optimal (2000-2500)") score += 20;
+    else if (rainfall === "High (2500-3000)") score += 15;
+    else if (rainfall === "Excessive (> 3000)") score += 5;
 
     // Temperature Scoring
-    if (temperature === "Moderate (20-30)") score += 15;
+    if (temperature === "Cool (< 20)") score += 5;
+    else if (temperature === "Moderate (20-30)") score += 15;
+    else if (temperature === "Warm (30-35)") score += 10;
+    else if (temperature === "Hot (> 35)") score += 5;
 
     setFarmHealthScore(score);
+
+    // Set suggestion based on score
+    if (score >= 60) {
+      setSuggestion("Excellent conditions for rubber farming!");
+    } else if (score >= 40) {
+      setSuggestion("Good conditions, but some improvements can be made.");
+    } else {
+      setSuggestion(
+        "Poor conditions, consider improving soil, drainage, or climate factors."
+      );
+    }
   };
 
   return (
@@ -138,6 +157,9 @@ function Tools() {
               Farm Health Score
             </h3>
             <p style={{ fontSize: "18px" }}>{farmHealthScore}</p>
+            <p style={{ fontSize: "16px", color: "blue", marginTop: "10px" }}>
+              {suggestion}
+            </p>
           </div>
         </div>
       </Paper>
